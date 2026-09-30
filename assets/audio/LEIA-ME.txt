@@ -1,0 +1,9 @@
+COLOQUE NESTA PASTA OS ARQUIVOS DE ÁUDIO DOS SINOS.
+
+Exemplos:
+- toque-01.mp3
+- toque-02.mp3
+- angelus.mp3
+- chamada-missa.wav
+
+Depois atualize o arquivo ../data.js com o nome exato do arquivo.
