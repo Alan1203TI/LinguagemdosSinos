@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#9c111b" />
   <meta name="description" content="SESIVERSO - Linguagem dos Sinos: conheça, ouça e descubra o significado dos toques dos sinos." />
   <title>SESIVERSO • Linguagem dos Sinos</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔔</text></svg>">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -96,7 +97,7 @@
           <div>
             <span class="eyebrow">EXPERIÊNCIA SONORA</span>
             <h2>Ouça os toques</h2>
-            <p>Clique em um card para ouvir. Um toque por vez.</p>
+            <p>Ouça cada toque e clique na nuvem para conhecer seu significado.</p>
           </div>
           <div class="search-wrap">
             <span>⌕</span>
@@ -176,6 +177,19 @@
       <small>Experiência educativa interativa.</small>
     </div>
   </footer>
+
+
+  <div class="info-modal hidden" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+    <div class="info-modal-backdrop" data-close-info></div>
+    <div class="info-modal-card">
+      <button class="info-modal-close" id="infoModalClose" aria-label="Fechar">×</button>
+      <div class="info-modal-cloud" aria-hidden="true">☁</div>
+      <span class="eyebrow">LINGUAGEM DOS SINOS</span>
+      <h2 id="infoModalTitle">Significado do toque</h2>
+      <p id="infoModalText"></p>
+      <button class="btn primary" id="infoModalPlay">▶ Ouvir este toque</button>
+    </div>
+  </div>
 
   <audio id="audioPlayer" preload="metadata"></audio>
   <audio id="quizAudio" preload="metadata"></audio>

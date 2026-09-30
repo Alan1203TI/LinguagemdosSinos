@@ -16,6 +16,12 @@ const heroNowSubtitle = document.getElementById('heroNowSubtitle');
 const heroBell = document.getElementById('heroBell');
 const miniBell = document.getElementById('miniBell');
 const statToques = document.getElementById('statToques');
+const infoModal = document.getElementById('infoModal');
+const infoModalTitle = document.getElementById('infoModalTitle');
+const infoModalText = document.getElementById('infoModalText');
+const infoModalClose = document.getElementById('infoModalClose');
+const infoModalPlay = document.getElementById('infoModalPlay');
+let infoTone = null;
 
 let currentTone = null;
 let currentFilter = 'Todos';
@@ -55,7 +61,7 @@ function filteredTones(){
   const q = searchInput.value.trim().toLowerCase();
   return tones.filter(t => {
     const inCategory = currentFilter === 'Todos' || (t.categoria || 'Outros') === currentFilter;
-    const haystack = `${t.nome} ${t.descricao} ${t.categoria}`.toLowerCase();
+    const haystack = `${t.nome} ${t.resumo || ''} ${t.descricao} ${t.categoria}`.toLowerCase();
     return inCategory && haystack.includes(q);
   });
 }
@@ -65,20 +71,42 @@ function renderTones(){
   emptyState.classList.toggle('hidden', list.length>0);
   grid.innerHTML = list.map((t, index) => `
     <article class="tone-card ${currentTone?.id===t.id && !audio.paused?'playing':''}" data-id="${escapeHtml(t.id)}">
-      ${t.imagem ? `<div class="tone-thumb-wrap"><img class="tone-thumb" src="${escapeHtml(t.imagem)}" alt="${escapeHtml(t.nome)}"></div>` : ''}
+      ${t.imagem ? `<div class="tone-thumb-wrap"><img class="tone-thumb" src="${escapeHtml(t.imagem)}" alt="Imagem ilustrativa para ${escapeHtml(t.nome)}"></div>` : ''}
       <span class="tone-number">${String(index+1).padStart(2,'0')}</span>
-      <div><span class="tone-icon">🔔</span><span class="tone-category">${escapeHtml(t.categoria || 'Toque')}</span></div>
+      <div class="tone-meta"><span class="tone-icon">🔔</span><span class="tone-category">${escapeHtml(t.categoria || 'Toque')}</span></div>
       <h3>${escapeHtml(t.nome)}</h3>
-      <p>${escapeHtml(t.descricao)}</p>
-      <div class="tone-card-footer">
+      <p class="tone-summary">${escapeHtml(t.resumo || t.descricao)}</p>
+      <div class="tone-actions">
         <button class="play-tone" data-id="${escapeHtml(t.id)}">${currentTone?.id===t.id && !audio.paused?'❚❚ Pausar':'▶ Ouvir toque'}</button>
-        <span class="tone-duration" data-duration-id="${escapeHtml(t.id)}">áudio</span>
+        <button class="cloud-info-btn" data-info-id="${escapeHtml(t.id)}" aria-label="Ler explicação de ${escapeHtml(t.nome)}"><span>☁</span><b>Conheça este toque</b></button>
       </div>
+      <div class="tone-duration">Duração aproximada: ${escapeHtml(t.duracao || 'áudio')}</div>
     </article>
   `).join('');
 
   grid.querySelectorAll('.play-tone').forEach(btn => btn.addEventListener('click', () => playTone(btn.dataset.id)));
+  grid.querySelectorAll('.cloud-info-btn').forEach(btn => btn.addEventListener('click', () => openInfo(btn.dataset.infoId)));
 }
+
+function openInfo(id){
+  const tone = tones.find(t => t.id === id);
+  if(!tone) return;
+  infoTone = tone;
+  infoModalTitle.textContent = tone.nome;
+  infoModalText.textContent = tone.descricao;
+  infoModal.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+  infoModalClose.focus();
+}
+function closeInfo(){
+  infoModal.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+  infoTone = null;
+}
+infoModalClose.addEventListener('click', closeInfo);
+infoModal.querySelectorAll('[data-close-info]').forEach(el => el.addEventListener('click', closeInfo));
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && !infoModal.classList.contains('hidden')) closeInfo(); });
+infoModalPlay.addEventListener('click', () => { if(infoTone){ playTone(infoTone.id); closeInfo(); } });
 
 function setPlayingUi(playing){
   globalPlayBtn.textContent = playing ? '❚❚' : '▶';
@@ -102,7 +130,7 @@ function playTone(id){
   audio.currentTime = 0;
   nowPlayingTitle.textContent = tone.nome;
   heroNowTitle.textContent = tone.nome;
-  heroNowSubtitle.textContent = tone.descricao;
+  heroNowSubtitle.textContent = tone.resumo || tone.descricao;
   globalPlayBtn.disabled = false;
   globalProgress.disabled = false;
   audio.play().catch(showAudioError);
@@ -171,7 +199,7 @@ function newQuizQuestion(){
   }
   const distractors = shuffle(tones.filter(t=>t.id!==quizTone.id)).slice(0,2);
   const options = shuffle([quizTone,...distractors]);
-  quizOptions.innerHTML = options.map(t=>`<button class="quiz-option" data-id="${escapeHtml(t.id)}">${escapeHtml(t.descricao)}</button>`).join('');
+  quizOptions.innerHTML = options.map(t=>`<button class="quiz-option" data-id="${escapeHtml(t.id)}">${escapeHtml(t.quizTexto || t.resumo || t.descricao)}</button>`).join('');
   quizOptions.querySelectorAll('.quiz-option').forEach(btn => btn.addEventListener('click',()=>answerQuiz(btn)));
 }
 function answerQuiz(btn){

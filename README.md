@@ -41,3 +41,12 @@ Suba todos os arquivos para o repositório. Depois, no GitHub:
 Settings → Pages → Deploy from a branch → `main` → `/root`.
 
 Não é necessário servidor, PHP ou banco de dados.
+
+
+## Conteúdo atual
+
+Os 7 áudios reais enviados já estão organizados em `assets/audio/` e vinculados aos cards. Cada card possui uma nuvem **Conheça este toque**, que abre a explicação completa. Os textos e caminhos ficam centralizados em `assets/data.js`.
+
+
+## Versão otimizada para GitHub Pages
+As imagens foram convertidas para WebP e os áudios para MP3 128 kbps, reduzindo bastante o tamanho sem prejudicar o uso no site. O favicon do sino também já está configurado.
