@@ -9,7 +9,7 @@ Site estático pronto para GitHub Pages.
 - `assets/app.js` — interações, player e quiz
 - `assets/data.js` — cadastro dos toques
 - `assets/audio/` — coloque aqui seus arquivos MP3 ou WAV
-- `assets/img/` — pasta reservada para imagens futuras
+- `assets/img/` — pasta reservada pa   ra imagens futuras
 
 ## Como cadastrar os áudios
 
