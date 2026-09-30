@@ -65,6 +65,7 @@ function renderTones(){
   emptyState.classList.toggle('hidden', list.length>0);
   grid.innerHTML = list.map((t, index) => `
     <article class="tone-card ${currentTone?.id===t.id && !audio.paused?'playing':''}" data-id="${escapeHtml(t.id)}">
+      ${t.imagem ? `<div class="tone-thumb-wrap"><img class="tone-thumb" src="${escapeHtml(t.imagem)}" alt="${escapeHtml(t.nome)}"></div>` : ''}
       <span class="tone-number">${String(index+1).padStart(2,'0')}</span>
       <div><span class="tone-icon">🔔</span><span class="tone-category">${escapeHtml(t.categoria || 'Toque')}</span></div>
       <h3>${escapeHtml(t.nome)}</h3>

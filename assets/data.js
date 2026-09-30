@@ -6,7 +6,7 @@
   COMO ADICIONAR UM NOVO TOQUE:
   1. Coloque o arquivo MP3/WAV dentro de: assets/audio/
   2. Duplique um item abaixo.
-  3. Altere id, nome, categoria, arquivo e descricao.
+  3. Altere id, nome, categoria, arquivo, imagem e descricao.
 
   Exemplo:
   {
@@ -14,6 +14,7 @@
     nome: "Angelus",
     categoria: "Religioso",
     arquivo: "assets/audio/angelus.mp3",
+    imagem: "assets/img/minha-imagem.png",
     descricao: "Descrição do significado do toque."
   }
   ======================================================
@@ -21,45 +22,59 @@
 
 window.SINO_DATA = [
   {
-    id: "toque-01",
-    nome: "Toque 01",
-    categoria: "Exemplo",
-    arquivo: "assets/audio/toque-01.mp3",
-    descricao: "Substitua esta descrição pelo significado real deste toque de sino."
+    id: "toque-carmo",
+    nome: "Igreja do Carmo",
+    categoria: "Torre e sino",
+    arquivo: "assets/audio/carmo.mp3",
+    imagem: "assets/img/carmo.png",
+    descricao: "Adicione aqui o significado do toque correspondente à Igreja do Carmo."
   },
   {
-    id: "toque-02",
-    nome: "Toque 02",
-    categoria: "Exemplo",
-    arquivo: "assets/audio/toque-02.mp3",
-    descricao: "Substitua esta descrição pelo significado real deste toque de sino."
+    id: "toque-sao-francisco",
+    nome: "São Francisco",
+    categoria: "Torre e sino",
+    arquivo: "assets/audio/sao-francisco.mp3",
+    imagem: "assets/img/sao-francisco.png",
+    descricao: "Adicione aqui o significado do toque correspondente à Igreja de São Francisco."
   },
   {
-    id: "toque-03",
-    nome: "Toque 03",
-    categoria: "Exemplo",
-    arquivo: "assets/audio/toque-03.mp3",
-    descricao: "Substitua esta descrição pelo significado real deste toque de sino."
+    id: "toque-matriz",
+    nome: "Matriz",
+    categoria: "Torre e sino",
+    arquivo: "assets/audio/matriz.mp3",
+    imagem: "assets/img/matriz.png",
+    descricao: "Adicione aqui o significado do toque correspondente à Matriz."
   },
   {
-    id: "toque-04",
-    nome: "Toque 04",
-    categoria: "Exemplo",
-    arquivo: "assets/audio/toque-04.mp3",
-    descricao: "Substitua esta descrição pelo significado real deste toque de sino."
+    id: "toque-merces",
+    nome: "Nossa Senhora das Mercês",
+    categoria: "Torre e sino",
+    arquivo: "assets/audio/merces.mp3",
+    imagem: "assets/img/merces.png",
+    descricao: "Adicione aqui o significado do toque correspondente à Igreja de Nossa Senhora das Mercês."
   },
   {
-    id: "toque-05",
-    nome: "Toque 05",
-    categoria: "Exemplo",
-    arquivo: "assets/audio/toque-05.mp3",
-    descricao: "Substitua esta descrição pelo significado real deste toque de sino."
+    id: "toque-matosinhos",
+    nome: "Bom Jesus do Matosinhos",
+    categoria: "Torre e sino",
+    arquivo: "assets/audio/matosinhos.mp3",
+    imagem: "assets/img/matosinhos.png",
+    descricao: "Adicione aqui o significado do toque correspondente à Igreja de Bom Jesus do Matosinhos."
   },
   {
-    id: "toque-06",
-    nome: "Toque 06",
-    categoria: "Exemplo",
-    arquivo: "assets/audio/toque-06.mp3",
-    descricao: "Substitua esta descrição pelo significado real deste toque de sino."
+    id: "toque-rosario",
+    nome: "Nossa Senhora do Rosário",
+    categoria: "Torre e sino",
+    arquivo: "assets/audio/rosario.mp3",
+    imagem: "assets/img/rosario.png",
+    descricao: "Adicione aqui o significado do toque correspondente à Igreja de Nossa Senhora do Rosário."
+  },
+  {
+    id: "toque-07",
+    nome: "Torre Histórica 07",
+    categoria: "Torre e sino",
+    arquivo: "assets/audio/toque-07.mp3",
+    imagem: "assets/img/torre-historica-07.png",
+    descricao: "Use este card para um sétimo toque ou para outra variação da linguagem dos sinos de São João del-Rei."
   }
 ];
