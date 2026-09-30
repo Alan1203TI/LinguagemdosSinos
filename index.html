@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#9c111b" />
-  <meta name="description" content="SESIVERSO - Linguagem dos Sinos: conheça, ouça e descubra o significado dos toques dos sinos." />
+  <meta name="theme-color" content="#0f1619" />
+  <meta name="description" content="SESIVERSO - Linguagem dos Sinos: ouça os toques tradicionais de São João del-Rei e descubra seus significados." />
   <title>SESIVERSO • Linguagem dos Sinos</title>
   <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -14,20 +14,20 @@
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="bg-glow glow-1"></div>
-  <div class="bg-glow glow-2"></div>
+  <div class="site-backdrop"></div>
+  <div class="site-overlay"></div>
 
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#inicio" aria-label="SESIVERSO - Início">
-        <span class="brand-mark">S</span>
+        <img src="assets/img/favicon.png" alt="Ícone do sino" class="brand-icon" />
         <span>
           <strong>SESIVERSO</strong>
           <small>Linguagem dos Sinos</small>
         </span>
       </a>
       <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#sobre">Conheça</a>
+        <a href="#sobre">Sobre</a>
         <a href="#toques">Toques</a>
         <a href="#quiz">Quiz</a>
       </nav>
@@ -39,34 +39,31 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">PATRIMÔNIO • HISTÓRIA • SOM</span>
-          <h1>A cidade fala.<br><span>Os sinos contam.</span></h1>
+          <span class="eyebrow">SESIVERSO • PATRIMÔNIO SONORO</span>
+          <h1>São João del-Rei,<br><span>a cidade onde os sinos falam.</span></h1>
           <p>
-            Descubra a <strong>Linguagem dos Sinos</strong>, ouça diferentes toques e entenda
-            como cada sequência sonora transmite mensagens, celebrações e memórias.
+            Ouça os toques tradicionais, conheça seus significados e explore uma das expressões
+            culturais mais marcantes da história de São João del-Rei.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="#toques">🔔 Ouvir os toques</a>
-            <a class="btn ghost" href="#quiz">🎧 Testar meus ouvidos</a>
+            <a class="btn primary" href="#toques">Ouvir os toques</a>
+            <a class="btn ghost" href="#quiz">Fazer o quiz</a>
           </div>
           <div class="hero-stats">
-            <div><strong id="statToques">0</strong><span>toques cadastrados</span></div>
-            <div><strong>100%</strong><span>interativo</span></div>
-            <div><strong>📱</strong><span>celular e computador</span></div>
+            <div><strong id="statToques">0</strong><span>toques disponíveis</span></div>
+            <div><strong>Tradição</strong><span>preservada em áudio</span></div>
+            <div><strong>Patrimônio</strong><span>cultural de São João del-Rei</span></div>
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="ring ring-a"></div>
-          <div class="ring ring-b"></div>
-          <div class="bell-stage" id="heroBell">
-            <div class="bell-emoji">🔔</div>
-            <div class="sound-wave"><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-          <div class="hero-card floating-card">
-            <span>TOCANDO AGORA</span>
-            <strong id="heroNowTitle">Escolha um toque</strong>
-            <small id="heroNowSubtitle">e escute a história ganhar som.</small>
+        <div class="hero-visual">
+          <div class="hero-image-card">
+            <img src="assets/img/sao-francisco.webp" alt="Torre e sino de igreja histórica" />
+            <div class="hero-panel" id="heroBell">
+              <span class="panel-label">TOQUE EM DESTAQUE</span>
+              <strong id="heroNowTitle">Selecione um toque</strong>
+              <p id="heroNowSubtitle">Clique em um card para ouvir o áudio e conhecer o significado.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -76,17 +73,16 @@
       <div class="container">
         <div class="section-heading centered">
           <span class="eyebrow">CONHEÇA</span>
-          <h2>O que é a Linguagem dos Sinos?</h2>
+          <h2>A linguagem dos sinos</h2>
           <p>
-            Os sinos não servem apenas para marcar horas. Seus ritmos, repiques e sequências
-            podem comunicar acontecimentos e momentos importantes para uma comunidade.
-            Nesta experiência, cada card apresenta um toque, seu áudio e o significado associado.
+            Mais do que marcar as horas, os sinos comunicam luto, festa, celebrações e momentos
+            importantes da vida religiosa e social. Cada toque possui um ritmo e uma intenção.
           </p>
         </div>
         <div class="feature-grid">
-          <article class="feature-card"><span>🔔</span><h3>Ouça</h3><p>Reproduza cada toque individualmente, com controle de progresso e volume.</p></article>
-          <article class="feature-card"><span>📖</span><h3>Entenda</h3><p>Leia a descrição e compreenda o contexto e a mensagem de cada toque.</p></article>
-          <article class="feature-card"><span>🎧</span><h3>Desafie-se</h3><p>No quiz, tente reconhecer o significado apenas ouvindo o sino.</p></article>
+          <article class="feature-card"><span class="feature-top">01</span><h3>Ouça</h3><p>Reproduza os toques tradicionais e acompanhe o áudio diretamente em cada card.</p></article>
+          <article class="feature-card"><span class="feature-top">02</span><h3>Entenda</h3><p>Clique na nuvem de leitura para abrir a explicação completa de cada toque.</p></article>
+          <article class="feature-card"><span class="feature-top">03</span><h3>Descubra</h3><p>Teste seus conhecimentos no quiz e tente identificar a mensagem de cada toque.</p></article>
         </div>
       </div>
     </section>
@@ -95,9 +91,9 @@
       <div class="container">
         <div class="section-heading row-heading">
           <div>
-            <span class="eyebrow">EXPERIÊNCIA SONORA</span>
-            <h2>Ouça os toques</h2>
-            <p>Ouça cada toque e clique na nuvem para conhecer seu significado.</p>
+            <span class="eyebrow">ACERVO SONORO</span>
+            <h2>Toques tradicionais</h2>
+            <p>Ouça o áudio, avance ou volte na barra do player e abra a nuvem para ler a explicação completa.</p>
           </div>
           <div class="search-wrap">
             <span>⌕</span>
@@ -108,28 +104,6 @@
         <div class="filter-row" id="filterRow"></div>
         <div class="tones-grid" id="tonesGrid"></div>
         <div class="empty-state hidden" id="emptyState">Nenhum toque encontrado.</div>
-      </div>
-    </section>
-
-    <section class="section now-playing-section">
-      <div class="container">
-        <div class="now-playing-bar" id="nowPlayingBar">
-          <div class="now-left">
-            <div class="mini-bell" id="miniBell">🔔</div>
-            <div>
-              <small>TOCANDO AGORA</small>
-              <strong id="nowPlayingTitle">Nenhum toque selecionado</strong>
-            </div>
-          </div>
-          <div class="now-controls">
-            <button id="globalPlayBtn" class="round-btn" aria-label="Reproduzir ou pausar" disabled>▶</button>
-            <div class="progress-wrap">
-              <input id="globalProgress" type="range" min="0" max="100" value="0" disabled />
-              <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
-            </div>
-            <div class="volume-wrap">🔊 <input id="globalVolume" type="range" min="0" max="1" step="0.05" value="0.85" /></div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -151,7 +125,7 @@
             <span class="score" id="scoreLabel">0 ponto</span>
           </div>
           <div class="quiz-bell" id="quizBell">🔔</div>
-          <button class="btn primary quiz-listen" id="quizListenBtn">▶ Ouvir toque misterioso</button>
+          <button class="btn primary quiz-listen" id="quizListenBtn">Ouvir toque misterioso</button>
           <p class="quiz-question">Qual mensagem esse toque representa?</p>
           <div class="quiz-options" id="quizOptions"></div>
           <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
@@ -164,9 +138,9 @@
       <div class="container footer-cta-card">
         <div>
           <span class="eyebrow">SESIVERSO</span>
-          <h2>Uma experiência para ouvir, aprender e preservar.</h2>
+          <h2>Preservar os sinos é preservar a memória sonora de São João del-Rei.</h2>
         </div>
-        <a class="btn light" href="#inicio">↑ Voltar ao início</a>
+        <a class="btn light" href="#inicio">Voltar ao início</a>
       </div>
     </section>
   </main>
@@ -178,7 +152,6 @@
     </div>
   </footer>
 
-
   <div class="info-modal hidden" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
     <div class="info-modal-backdrop" data-close-info></div>
     <div class="info-modal-card">
@@ -187,7 +160,7 @@
       <span class="eyebrow">LINGUAGEM DOS SINOS</span>
       <h2 id="infoModalTitle">Significado do toque</h2>
       <p id="infoModalText"></p>
-      <button class="btn primary" id="infoModalPlay">▶ Ouvir este toque</button>
+      <button class="btn primary" id="infoModalPlay">Ouvir este toque</button>
     </div>
   </div>
 
